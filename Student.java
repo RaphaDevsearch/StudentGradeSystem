@@ -23,17 +23,28 @@ public class Student {
         return grades;
     }
 
+    public void addGrade(Grade g) {
+        grades.add(g);
+    }
+
     public double calculateAverage() {
-        if (grades.isEmpty()) return 0;
+        if (grades.isEmpty())
+            return 0;
         double sum = 0;
-        for(Grade g : grades){
+        for (Grade g : grades) {
             sum += g.getScore();
         }
-        return sum/grades.size();
+        return sum / grades.size();
+    }
+
+    
+    public void display(){
+        System.out.println(id +"-"+ name + " " + calculateAverage());
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return id + " - " + name;
     }
+
 }
